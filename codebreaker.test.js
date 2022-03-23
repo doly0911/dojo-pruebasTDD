@@ -5,7 +5,12 @@ test('full match all digits', () => {
     expect(result).toBe('XXXX'); //Assert
 });
 
-test('none in position', () => {
+test('digits not exist', () => {
     const result = cb.match('9578'); 
     expect(result).toBe(''); 
+});
+
+test('only 1 digit', () => {
+    const result = cb.match('1765'); 
+    expect(result).toBe('X'); 
 });
