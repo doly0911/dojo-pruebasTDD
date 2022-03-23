@@ -11,17 +11,21 @@ function match(digits){
         return 'XXXX';
     } 
      else {
-        for(var i = 0; i < digits.length ; i++){
-            var digit= digits.charAt(i);  //separa cada digito ingresado por usuario
-            for (var j=0; j<4; j++){
+        for(var i = 0; i < 4; i++){   
+            var digit= digits.charAt(i);  //separa cada digito ingresado por usuario         
+            for (var j=0; j<4; j++){                
                 var secretNum = codeBreaker.secretDigit.charAt(j);   //separa cada digito del numero a adivinar
-                if(digit==secretNum) {
-                    return digitExist = 'X';
-                } else if (digitExist==''){
-                    return '';
-                }
+
+                if((digit==secretNum) && (i==j)) {
+                    digitExist += 'X';
+                }   
+                j=4;
             }           
-        } 
+        }         
+        if (digitExist=='') {
+            return '';
+        } else return digitExist;
+       
     }
     
 }
