@@ -10,16 +10,16 @@ function match(digits) {
     return "XXXX";
   } else {
     for (var i = 0; i < 4; i++) {
-      var digit = digits.charAt(i); //separa cada digito ingresado por usuario
+      var digit = digits.charAt(i); //Split each entry by digits.
       for (var j = 0; j < 4; j++) {
-        var secretNum = codeBreaker.secretDigit.charAt(j); //separa cada digito del numero a adivinar
+        var secretNum = codeBreaker.secretDigit.charAt(j); //Split each digit of the number to guess.
 
-        if (digit == secretNum && i == j) {
-          j = 4;
+        if (digit == secretNum && i == j) {          
           digitExist += "X";
-        } else if (digit == secretNum) {
           j = 4;
+        } else if (digit == secretNum) {          
           digitExist += "-";
+          j = 4;
         } else {
           digitExist += "";
         }
